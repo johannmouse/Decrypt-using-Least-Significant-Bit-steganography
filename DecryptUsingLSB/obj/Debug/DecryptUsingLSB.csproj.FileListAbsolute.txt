@@ -1,0 +1,9 @@
+C:\Users\tqvinh\source\repos\DecryptUsingLSB\DecryptUsingLSB\bin\Debug\DecryptUsingLSB.exe.config
+C:\Users\tqvinh\source\repos\DecryptUsingLSB\DecryptUsingLSB\bin\Debug\DecryptUsingLSB.exe
+C:\Users\tqvinh\source\repos\DecryptUsingLSB\DecryptUsingLSB\bin\Debug\DecryptUsingLSB.pdb
+C:\Users\tqvinh\source\repos\DecryptUsingLSB\DecryptUsingLSB\obj\Debug\DecryptUsingLSB.csprojAssemblyReference.cache
+C:\Users\tqvinh\source\repos\DecryptUsingLSB\DecryptUsingLSB\obj\Debug\DecryptUsingLSB.Form1.resources
+C:\Users\tqvinh\source\repos\DecryptUsingLSB\DecryptUsingLSB\obj\Debug\DecryptUsingLSB.Properties.Resources.resources
+C:\Users\tqvinh\source\repos\DecryptUsingLSB\DecryptUsingLSB\obj\Debug\DecryptUsingLSB.csproj.GenerateResource.cache
+C:\Users\tqvinh\source\repos\DecryptUsingLSB\DecryptUsingLSB\obj\Debug\DecryptUsingLSB.exe
+C:\Users\tqvinh\source\repos\DecryptUsingLSB\DecryptUsingLSB\obj\Debug\DecryptUsingLSB.pdb
