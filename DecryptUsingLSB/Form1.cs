@@ -74,7 +74,7 @@ namespace DecryptUsingLSB
         {
             for (int j = 0; j < bmp.Width; j++)
             {
-                rawMessage.Append(Convert.ToString(bmp.GetPixel(i, j).R, 2).PadLeft(8, '0')[7]);
+                rawMessage.Append(Convert.ToString(bmp.GetPixel(j, i).R, 2).PadLeft(8, '0')[7]);
                 if (rawMessage.ToString().Contains(StringToBinary(END_MARK)))
                 {
                     rawMessage.Remove(rawMessage.Length - 56, 56);
