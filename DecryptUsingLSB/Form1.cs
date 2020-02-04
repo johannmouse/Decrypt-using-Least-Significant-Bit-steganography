@@ -19,7 +19,7 @@ namespace DecryptUsingLSB
             Icon = Icon.FromHandle(bmp.GetHicon());
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Open(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog
             {
@@ -35,7 +35,6 @@ namespace DecryptUsingLSB
                 else if (bmp.Width > bmp.Height && bmp.Width >= 547)
                 {
                     bmpResize = new Bitmap(bmp, 547, (int)(bmp.Height / ((float)bmp.Width / 547)));
-                    MessageBox.Show(bmpResize.Width + " - " + bmpResize.Height);
                 }
                 else
                 {
