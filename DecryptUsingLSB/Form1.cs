@@ -62,7 +62,7 @@ namespace DecryptUsingLSB
             }
             if (rawMessage.ToString().Contains(StringToBinary(END_MARK)))
             {
-                rawMessage.Remove(rawMessage.Length - 56, 56);
+                rawMessage.Remove(rawMessage.ToString().IndexOf(StringToBinary(END_MARK)), rawMessage.Length - rawMessage.ToString().IndexOf(StringToBinary(END_MARK)));
                 richTextBox1.Text = ToVietnamese(BinaryToString(rawMessage.ToString()));
             }
             else
