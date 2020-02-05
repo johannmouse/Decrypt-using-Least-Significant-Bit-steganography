@@ -47,42 +47,28 @@ namespace DecryptUsingLSB
 
         private void Decrypt(object sender, EventArgs e)
         {
-            int count = 0;
             if (bmp == null)
             {
                 MessageBox.Show("Choose the image containing message");
                 return;
             }
             StringBuilder rawMessage = new StringBuilder();
-            bool endMarkFound = false;
             for (int i = 0; i < bmp.Height; i++)
             {
-                count++;
-                if (AddBitOfMessage(i, ref rawMessage))
+                for (int j = 0; j < bmp.Width; j++)
                 {
-                    endMarkFound = true;
-                    break;
+                    rawMessage.Append(Convert.ToString(bmp.GetPixel(j, i).R, 2).PadLeft(8, '0')[7]);
                 }
             }
-            Clipboard.SetText(rawMessage.ToString());
-            if (!endMarkFound)
+            if (rawMessage.ToString().Contains(StringToBinary(END_MARK)))
+            {
+                rawMessage.Remove(rawMessage.Length - 56, 56);
+                richTextBox1.Text = ToVietnamese(BinaryToString(rawMessage.ToString()));
+            }
+            else
             {
                 MessageBox.Show("Can not find end point of the message in this picture.");
             }
-        }
-        private bool AddBitOfMessage(int i, ref StringBuilder rawMessage)
-        {
-            for (int j = 0; j < bmp.Width; j++)
-            {
-                rawMessage.Append(Convert.ToString(bmp.GetPixel(j, i).R, 2).PadLeft(8, '0')[7]);
-                if (rawMessage.ToString().Contains(StringToBinary(END_MARK)))
-                {
-                    rawMessage.Remove(rawMessage.Length - 56, 56);
-                    richTextBox1.Text = ToVietnamese(BinaryToString(rawMessage.ToString()));
-                    return true;
-                }
-            }
-            return false;
         }
         public static string StringToBinary(string message)
         {
