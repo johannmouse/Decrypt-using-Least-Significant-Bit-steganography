@@ -67,62 +67,169 @@ namespace DecryptUsingLSB
 
             //R
             StringBuilder R_text = new StringBuilder();
-            for (int i = 0; i < bmp.Height; i++)
+            string numberOfDigit_R = "";
+            for (int i = 0; i < 8; i++)
             {
-                for (int j = 0; j < bmp.Width; j++)
+                numberOfDigit_R += Convert.ToString(bmp.GetPixel(i, 0).R, 2).PadLeft(8, '0')[7];
+            }
+            try
+            {
+                int lengthOfBinary_R;
+                string lengthInText_R = "";
+                int maxR = 0;
+                numberOfDigit_R = BinaryToString(numberOfDigit_R);
+                if (numberOfDigit_R.Equals("1")) maxR = 16;
+                else if (numberOfDigit_R.Equals("2")) maxR = 24;
+                else if (numberOfDigit_R.Equals("3")) maxR = 32;
+                else if (numberOfDigit_R.Equals("4")) maxR = 40;
+                else if (numberOfDigit_R.Equals("5")) maxR = 48;
+                else if (numberOfDigit_R.Equals("6")) maxR = 56;
+                else if (numberOfDigit_R.Equals("7")) maxR = 64;
+                else if (numberOfDigit_R.Equals("8")) maxR = 72;
+                else if (numberOfDigit_R.Equals("9")) maxR = 80;
+                for (int i = 8; i < maxR; i++)
                 {
-                    R_text.Append(Convert.ToString(bmp.GetPixel(j, i).R, 2).PadLeft(8, '0')[7]);
-                    if (R_text.Length > 56 && R_text.ToString(R_text.Length - 56, 56).Equals(END_MARK_BINARY))
+                    lengthInText_R += Convert.ToString(bmp.GetPixel(i, 0).R, 2).PadLeft(8, '0')[7];
+                }
+                lengthOfBinary_R = Int32.Parse(BinaryToString(lengthInText_R));
+                int redundantHead_R = 8 + (Int32.Parse(numberOfDigit_R) * 8);
+                int totalLength_R = redundantHead_R + lengthOfBinary_R + 56;
+                int count_R = 0;
+                for (int i = 0; i < bmp.Height; i++)
+                {
+                    for (int j = 0; j < bmp.Width; j++)
                     {
-                        i = bmp.Height;
-                        break;
+                        count_R++;
+                        R_text.Append(Convert.ToString(bmp.GetPixel(j, i).R, 2).PadLeft(8, '0')[7]);
+                        if (count_R == totalLength_R)
+                        {
+                            i = bmp.Height;
+                            break;
+                        }
                     }
                 }
+                if (R_text.ToString().Contains(END_MARK_BINARY))
+                {
+                    R_text.Remove(0, redundantHead_R);
+                    R_text.Remove(R_text.Length - 56, 56);
+                    R_message = ToVietnamese(BinaryToString(R_text.ToString()));
+                }
             }
-            if (R_text.ToString().Contains(END_MARK_BINARY))
+            catch
             {
-                R_text.Remove(R_text.ToString().IndexOf(END_MARK_BINARY), R_text.Length - R_text.ToString().IndexOf(END_MARK_BINARY));
-                R_message = ToVietnamese(BinaryToString(R_text.ToString()));
+                //do nothing
             }
+
 
             //G
             StringBuilder G_text = new StringBuilder();
-            for (int i = 0; i < bmp.Height; i++)
+            string numberOfDigit_G = "";
+            for (int i = 0; i < 8; i++)
             {
-                for (int j = 0; j < bmp.Width; j++)
+                numberOfDigit_G += Convert.ToString(bmp.GetPixel(i, 0).G, 2).PadLeft(8, '0')[7];
+            }
+            try
+            {
+                int lengthOfBinary_G;
+                string lengthInText_G = "";
+                int max_G = 0;
+                numberOfDigit_G = BinaryToString(numberOfDigit_G);
+                if (numberOfDigit_G.Equals("1")) max_G = 16;
+                else if (numberOfDigit_G.Equals("2")) max_G = 24;
+                else if (numberOfDigit_G.Equals("3")) max_G = 32;
+                else if (numberOfDigit_G.Equals("4")) max_G = 40;
+                else if (numberOfDigit_G.Equals("5")) max_G = 48;
+                else if (numberOfDigit_G.Equals("6")) max_G = 56;
+                else if (numberOfDigit_G.Equals("7")) max_G = 64;
+                else if (numberOfDigit_G.Equals("8")) max_G = 72;
+                else if (numberOfDigit_G.Equals("9")) max_G = 80;
+                for (int i = 8; i < max_G; i++)
                 {
-                    G_text.Append(Convert.ToString(bmp.GetPixel(j, i).G, 2).PadLeft(8, '0')[7]);
-                    if (G_text.Length > 56 && G_text.ToString(G_text.Length - 56, 56).Equals(END_MARK_BINARY))
+                    lengthInText_G += Convert.ToString(bmp.GetPixel(i, 0).G, 2).PadLeft(8, '0')[7];
+                }
+                lengthOfBinary_G = Int32.Parse(BinaryToString(lengthInText_G));
+                int redundantHead_G = 8 + (Int32.Parse(numberOfDigit_G) * 8);
+                int totalLength_G = redundantHead_G + lengthOfBinary_G + 56;
+                int count_G = 0;
+                for (int i = 0; i < bmp.Height; i++)
+                {
+                    for (int j = 0; j < bmp.Width; j++)
                     {
-                        i = bmp.Height;
-                        break;
+                        count_G++;
+                        G_text.Append(Convert.ToString(bmp.GetPixel(j, i).G, 2).PadLeft(8, '0')[7]);
+                        if (count_G == totalLength_G)
+                        {
+                            i = bmp.Height;
+                            break;
+                        }
                     }
                 }
+                if (G_text.ToString().Contains(END_MARK_BINARY))
+                {
+                    G_text.Remove(0, redundantHead_G);
+                    G_text.Remove(G_text.Length - 56, 56);
+                    G_message = ToVietnamese(BinaryToString(G_text.ToString()));
+                }
             }
-            if (G_text.ToString().Contains(END_MARK_BINARY))
+            catch
             {
-                G_text.Remove(G_text.ToString().IndexOf(END_MARK_BINARY), G_text.Length - G_text.ToString().IndexOf(END_MARK_BINARY));
-                G_message = ToVietnamese(BinaryToString(G_text.ToString()));
+                //do nothing
             }
+
 
             //B
             StringBuilder B_text = new StringBuilder();
-            for (int i = 0; i < bmp.Height; i++)
+            string numberOfDigit_B = "";
+            for (int i = 0; i < 8; i++)
             {
-                for (int j = 0; j < bmp.Width; j++)
+                numberOfDigit_B += Convert.ToString(bmp.GetPixel(i, 0).B, 2).PadLeft(8, '0')[7];
+            }
+            try
+            {
+                int lengthOfBinary_B;
+                string lengthInText_B = "";
+                int max_B = 0;
+                numberOfDigit_B = BinaryToString(numberOfDigit_B);
+                if (numberOfDigit_B.Equals("1")) max_B = 16;
+                else if (numberOfDigit_B.Equals("2")) max_B = 24;
+                else if (numberOfDigit_B.Equals("3")) max_B = 32;
+                else if (numberOfDigit_B.Equals("4")) max_B = 40;
+                else if (numberOfDigit_B.Equals("5")) max_B = 48;
+                else if (numberOfDigit_B.Equals("6")) max_B = 56;
+                else if (numberOfDigit_B.Equals("7")) max_B = 64;
+                else if (numberOfDigit_B.Equals("8")) max_B = 72;
+                else if (numberOfDigit_B.Equals("9")) max_B = 80;
+                for (int i = 8; i < max_B; i++)
                 {
-                    B_text.Append(Convert.ToString(bmp.GetPixel(j, i).B, 2).PadLeft(8, '0')[7]);
-                    if (B_text.Length > 56 && B_text.ToString(B_text.Length - 56, 56).Equals(END_MARK_BINARY))
+                    lengthInText_B += Convert.ToString(bmp.GetPixel(i, 0).B, 2).PadLeft(8, '0')[7];
+                }
+                lengthOfBinary_B = int.Parse(BinaryToString(lengthInText_B));
+                int redundantHead_B = 8 + (int.Parse(numberOfDigit_B) * 8);
+                int totalLength_B = redundantHead_B + lengthOfBinary_B + 56;
+                int count_B = 0;
+                for (int i = 0; i < bmp.Height; i++)
+                {
+                    for (int j = 0; j < bmp.Width; j++)
                     {
-                        i = bmp.Height;
-                        break;
+                        count_B++;
+                        B_text.Append(Convert.ToString(bmp.GetPixel(j, i).B, 2).PadLeft(8, '0')[7]);
+                        if (count_B == totalLength_B)
+                        {
+                            i = bmp.Height;
+                            break;
+                        }
                     }
                 }
+                if (B_text.ToString().Contains(END_MARK_BINARY))
+                {
+                    B_text.Remove(0, redundantHead_B);
+                    B_text.Remove(B_text.Length - 56, 56);
+                    B_message = ToVietnamese(BinaryToString(B_text.ToString()));
+                }
             }
-            if (B_text.ToString().Contains(END_MARK_BINARY))
+            catch
             {
-                B_text.Remove(B_text.ToString().IndexOf(END_MARK_BINARY), B_text.Length - B_text.ToString().IndexOf(END_MARK_BINARY));
-                B_message = ToVietnamese(BinaryToString(B_text.ToString()));
+                //do nothing
             }
 
             if (!string.IsNullOrEmpty(R_message)) richTextBoxMessage.Text = R_message;

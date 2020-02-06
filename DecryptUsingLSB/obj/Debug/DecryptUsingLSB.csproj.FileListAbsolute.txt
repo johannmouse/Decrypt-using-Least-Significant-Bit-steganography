@@ -16,3 +16,13 @@ C:\Users\tqvinh\Desktop\Decrypt-using-Least-Significant-Bit-steganography\Decryp
 C:\Users\tqvinh\Desktop\Decrypt-using-Least-Significant-Bit-steganography\DecryptUsingLSB\obj\Debug\DecryptUsingLSB.exe
 C:\Users\tqvinh\Desktop\Decrypt-using-Least-Significant-Bit-steganography\DecryptUsingLSB\obj\Debug\DecryptUsingLSB.pdb
 C:\Users\tqvinh\Desktop\Decrypt-using-Least-Significant-Bit-steganography\DecryptUsingLSB\obj\Debug\DecryptUsingLSB.FormDecrypt.resources
+C:\Users\pc\Desktop\Decrypt-using-Least-Significant-Bit-steganography\DecryptUsingLSB\bin\Debug\DecryptUsingLSB.exe.config
+C:\Users\pc\Desktop\Decrypt-using-Least-Significant-Bit-steganography\DecryptUsingLSB\bin\Debug\DecryptUsingLSB.exe
+C:\Users\pc\Desktop\Decrypt-using-Least-Significant-Bit-steganography\DecryptUsingLSB\bin\Debug\DecryptUsingLSB.pdb
+C:\Users\pc\Desktop\Decrypt-using-Least-Significant-Bit-steganography\DecryptUsingLSB\obj\Debug\DecryptUsingLSB.csprojAssemblyReference.cache
+C:\Users\pc\Desktop\Decrypt-using-Least-Significant-Bit-steganography\DecryptUsingLSB\obj\Debug\DecryptUsingLSB.FormDecrypt.resources
+C:\Users\pc\Desktop\Decrypt-using-Least-Significant-Bit-steganography\DecryptUsingLSB\obj\Debug\DecryptUsingLSB.Properties.Resources.resources
+C:\Users\pc\Desktop\Decrypt-using-Least-Significant-Bit-steganography\DecryptUsingLSB\obj\Debug\DecryptUsingLSB.csproj.GenerateResource.cache
+C:\Users\pc\Desktop\Decrypt-using-Least-Significant-Bit-steganography\DecryptUsingLSB\obj\Debug\DecryptUsingLSB.csproj.CoreCompileInputs.cache
+C:\Users\pc\Desktop\Decrypt-using-Least-Significant-Bit-steganography\DecryptUsingLSB\obj\Debug\DecryptUsingLSB.exe
+C:\Users\pc\Desktop\Decrypt-using-Least-Significant-Bit-steganography\DecryptUsingLSB\obj\Debug\DecryptUsingLSB.pdb
