@@ -1,6 +1,6 @@
 ﻿namespace DecryptUsingLSB
 {
-    partial class Form1
+    partial class FormDecrypt
     {
         /// <summary>
         /// Required designer variable.
@@ -28,73 +28,119 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBoxInput = new System.Windows.Forms.PictureBox();
+            this.buttonTranslate = new System.Windows.Forms.Button();
+            this.richTextBoxMessage = new System.Windows.Forms.RichTextBox();
+            this.textBoxPath = new System.Windows.Forms.TextBox();
+            this.buttonBrowse = new System.Windows.Forms.Button();
+            this.buttonR = new System.Windows.Forms.Button();
+            this.buttonG = new System.Windows.Forms.Button();
+            this.buttonB = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInput)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pictureBoxInput
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(52, 26);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(547, 281);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxInput.Location = new System.Drawing.Point(54, 120);
+            this.pictureBoxInput.Name = "pictureBoxInput";
+            this.pictureBoxInput.Size = new System.Drawing.Size(300, 300);
+            this.pictureBoxInput.TabIndex = 0;
+            this.pictureBoxInput.TabStop = false;
             // 
-            // button1
+            // buttonTranslate
             // 
-            this.button1.Location = new System.Drawing.Point(267, 382);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 44);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Translate";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Decrypt);
+            this.buttonTranslate.Location = new System.Drawing.Point(372, 256);
+            this.buttonTranslate.Name = "buttonTranslate";
+            this.buttonTranslate.Size = new System.Drawing.Size(120, 44);
+            this.buttonTranslate.TabIndex = 1;
+            this.buttonTranslate.Text = "Translate";
+            this.buttonTranslate.UseVisualStyleBackColor = true;
+            this.buttonTranslate.Click += new System.EventHandler(this.Decrypt);
             // 
-            // richTextBox1
+            // richTextBoxMessage
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(52, 468);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richTextBox1.Size = new System.Drawing.Size(547, 281);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
+            this.richTextBoxMessage.Location = new System.Drawing.Point(515, 41);
+            this.richTextBoxMessage.Name = "richTextBoxMessage";
+            this.richTextBoxMessage.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.richTextBoxMessage.Size = new System.Drawing.Size(545, 569);
+            this.richTextBoxMessage.TabIndex = 2;
+            this.richTextBoxMessage.Text = "";
             // 
-            // textBox1
+            // textBoxPath
             // 
-            this.textBox1.Location = new System.Drawing.Point(150, 342);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(449, 20);
-            this.textBox1.TabIndex = 4;
+            this.textBoxPath.Location = new System.Drawing.Point(54, 468);
+            this.textBoxPath.Name = "textBoxPath";
+            this.textBoxPath.Size = new System.Drawing.Size(300, 20);
+            this.textBoxPath.TabIndex = 4;
             // 
-            // button2
+            // buttonBrowse
             // 
-            this.button2.Location = new System.Drawing.Point(52, 339);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(79, 25);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Browse";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Open);
+            this.buttonBrowse.Location = new System.Drawing.Point(161, 426);
+            this.buttonBrowse.Name = "buttonBrowse";
+            this.buttonBrowse.Size = new System.Drawing.Size(79, 25);
+            this.buttonBrowse.TabIndex = 3;
+            this.buttonBrowse.Text = "Browse";
+            this.buttonBrowse.UseVisualStyleBackColor = true;
+            this.buttonBrowse.Click += new System.EventHandler(this.Open);
             // 
-            // Form1
+            // buttonR
+            // 
+            this.buttonR.BackColor = System.Drawing.Color.White;
+            this.buttonR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonR.ForeColor = System.Drawing.Color.Red;
+            this.buttonR.Location = new System.Drawing.Point(515, 20);
+            this.buttonR.Name = "buttonR";
+            this.buttonR.Size = new System.Drawing.Size(75, 23);
+            this.buttonR.TabIndex = 5;
+            this.buttonR.Text = "R";
+            this.buttonR.UseVisualStyleBackColor = false;
+            this.buttonR.Click += new System.EventHandler(this.View_R);
+            // 
+            // buttonG
+            // 
+            this.buttonG.BackColor = System.Drawing.Color.White;
+            this.buttonG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonG.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.buttonG.Location = new System.Drawing.Point(589, 20);
+            this.buttonG.Name = "buttonG";
+            this.buttonG.Size = new System.Drawing.Size(75, 23);
+            this.buttonG.TabIndex = 6;
+            this.buttonG.Text = "G";
+            this.buttonG.UseVisualStyleBackColor = false;
+            this.buttonG.Click += new System.EventHandler(this.View_G);
+            // 
+            // buttonB
+            // 
+            this.buttonB.BackColor = System.Drawing.Color.White;
+            this.buttonB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonB.ForeColor = System.Drawing.Color.Blue;
+            this.buttonB.Location = new System.Drawing.Point(663, 20);
+            this.buttonB.Name = "buttonB";
+            this.buttonB.Size = new System.Drawing.Size(75, 23);
+            this.buttonB.TabIndex = 7;
+            this.buttonB.Text = "B";
+            this.buttonB.UseVisualStyleBackColor = false;
+            this.buttonB.Click += new System.EventHandler(this.View_B);
+            // 
+            // FormDecrypt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(660, 824);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(1093, 648);
+            this.Controls.Add(this.buttonB);
+            this.Controls.Add(this.buttonG);
+            this.Controls.Add(this.buttonR);
+            this.Controls.Add(this.textBoxPath);
+            this.Controls.Add(this.buttonBrowse);
+            this.Controls.Add(this.richTextBoxMessage);
+            this.Controls.Add(this.buttonTranslate);
+            this.Controls.Add(this.pictureBoxInput);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Form1";
+            this.Name = "FormDecrypt";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Get something from your image";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInput)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,11 +148,14 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.PictureBox pictureBoxInput;
+        private System.Windows.Forms.Button buttonTranslate;
+        private System.Windows.Forms.RichTextBox richTextBoxMessage;
+        private System.Windows.Forms.TextBox textBoxPath;
+        private System.Windows.Forms.Button buttonBrowse;
+        private System.Windows.Forms.Button buttonR;
+        private System.Windows.Forms.Button buttonG;
+        private System.Windows.Forms.Button buttonB;
     }
 }
 
