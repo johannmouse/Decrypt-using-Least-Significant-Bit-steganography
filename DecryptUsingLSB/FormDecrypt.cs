@@ -234,6 +234,10 @@ namespace DecryptUsingLSB
 
             if (!string.IsNullOrEmpty(R_message)) richTextBoxMessage.Text = R_message;
             else richTextBoxMessage.Text = "N/A";
+            buttonR.BackColor = Color.LightGray;
+            buttonG.BackColor = Color.White;
+            buttonB.BackColor = Color.White;
+            currentPage = Page.R;
         }
         public static string StringToBinary(string message)
         {
