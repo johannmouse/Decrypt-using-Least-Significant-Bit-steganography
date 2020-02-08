@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Text;
@@ -49,11 +50,14 @@ namespace DecryptUsingLSB
                     bmpResize = bmp;
                 }
                 pictureBoxInput.Image = bmpResize;
-                textBoxPath.Text = open.FileName;
                 R_message = string.Empty;
                 G_message = string.Empty;
                 B_message = string.Empty;
                 richTextBoxMessage.Text = string.Empty;
+                buttonR.BackColor = Color.LightGray;
+                buttonG.BackColor = Color.White;
+                buttonB.BackColor = Color.White;
+                currentPage = Page.R;
             }
         }
 
@@ -120,7 +124,6 @@ namespace DecryptUsingLSB
                 //do nothing
             }
 
-
             //G
             StringBuilder G_text = new StringBuilder();
             string numberOfDigit_G = "";
@@ -175,7 +178,6 @@ namespace DecryptUsingLSB
             {
                 //do nothing
             }
-
 
             //B
             StringBuilder B_text = new StringBuilder();
@@ -239,6 +241,7 @@ namespace DecryptUsingLSB
             buttonB.BackColor = Color.White;
             currentPage = Page.R;
         }
+
         public static string StringToBinary(string message)
         {
             StringBuilder sb = new StringBuilder();
@@ -296,7 +299,7 @@ namespace DecryptUsingLSB
 
         private void View_R(object sender, EventArgs e)
         {
-            if (currentPage != Page.R)
+            if (bmp != null && currentPage != Page.R)
             {
                 if (!string.IsNullOrEmpty(R_message)) richTextBoxMessage.Text = R_message;
                 else richTextBoxMessage.Text = "N/A";
@@ -309,7 +312,7 @@ namespace DecryptUsingLSB
 
         private void View_G(object sender, EventArgs e)
         {
-            if (currentPage != Page.G)
+            if (bmp != null && currentPage != Page.G)
             {
                 if (!string.IsNullOrEmpty(G_message)) richTextBoxMessage.Text = G_message;
                 else richTextBoxMessage.Text = "N/A";
@@ -322,7 +325,7 @@ namespace DecryptUsingLSB
 
         private void View_B(object sender, EventArgs e)
         {
-            if (currentPage != Page.B)
+            if (bmp != null && currentPage != Page.B)
             {
                 if (!string.IsNullOrEmpty(B_message)) richTextBoxMessage.Text = B_message;
                 else richTextBoxMessage.Text = "N/A";
@@ -331,6 +334,11 @@ namespace DecryptUsingLSB
                 buttonB.BackColor = Color.LightGray;
                 currentPage = Page.B;
             }
+        }
+
+        private void Dỉrect(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://www.facebook.com/thonchienvodich");
         }
     }
 }

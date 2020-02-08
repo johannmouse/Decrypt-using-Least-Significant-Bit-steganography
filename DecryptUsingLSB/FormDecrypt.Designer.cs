@@ -31,26 +31,26 @@
             this.pictureBoxInput = new System.Windows.Forms.PictureBox();
             this.buttonTranslate = new System.Windows.Forms.Button();
             this.richTextBoxMessage = new System.Windows.Forms.RichTextBox();
-            this.textBoxPath = new System.Windows.Forms.TextBox();
-            this.buttonBrowse = new System.Windows.Forms.Button();
             this.buttonR = new System.Windows.Forms.Button();
             this.buttonG = new System.Windows.Forms.Button();
             this.buttonB = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInput)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxInput
             // 
             this.pictureBoxInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxInput.Location = new System.Drawing.Point(54, 120);
+            this.pictureBoxInput.Location = new System.Drawing.Point(54, 188);
             this.pictureBoxInput.Name = "pictureBoxInput";
             this.pictureBoxInput.Size = new System.Drawing.Size(300, 300);
             this.pictureBoxInput.TabIndex = 0;
             this.pictureBoxInput.TabStop = false;
+            this.pictureBoxInput.Click += new System.EventHandler(this.Open);
             // 
             // buttonTranslate
             // 
-            this.buttonTranslate.Location = new System.Drawing.Point(372, 256);
+            this.buttonTranslate.Location = new System.Drawing.Point(372, 324);
             this.buttonTranslate.Name = "buttonTranslate";
             this.buttonTranslate.Size = new System.Drawing.Size(120, 44);
             this.buttonTranslate.TabIndex = 1;
@@ -66,23 +66,6 @@
             this.richTextBoxMessage.Size = new System.Drawing.Size(545, 569);
             this.richTextBoxMessage.TabIndex = 2;
             this.richTextBoxMessage.Text = "";
-            // 
-            // textBoxPath
-            // 
-            this.textBoxPath.Location = new System.Drawing.Point(54, 468);
-            this.textBoxPath.Name = "textBoxPath";
-            this.textBoxPath.Size = new System.Drawing.Size(300, 20);
-            this.textBoxPath.TabIndex = 4;
-            // 
-            // buttonBrowse
-            // 
-            this.buttonBrowse.Location = new System.Drawing.Point(161, 426);
-            this.buttonBrowse.Name = "buttonBrowse";
-            this.buttonBrowse.Size = new System.Drawing.Size(79, 25);
-            this.buttonBrowse.TabIndex = 3;
-            this.buttonBrowse.Text = "Browse";
-            this.buttonBrowse.UseVisualStyleBackColor = true;
-            this.buttonBrowse.Click += new System.EventHandler(this.Open);
             // 
             // buttonR
             // 
@@ -123,16 +106,26 @@
             this.buttonB.UseVisualStyleBackColor = false;
             this.buttonB.Click += new System.EventHandler(this.View_B);
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(954, 613);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(106, 13);
+            this.linkLabel1.TabIndex = 8;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "By: Tran Quang Vinh";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Dỉrect);
+            // 
             // FormDecrypt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1093, 648);
+            this.ClientSize = new System.Drawing.Size(1093, 630);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.buttonB);
             this.Controls.Add(this.buttonG);
             this.Controls.Add(this.buttonR);
-            this.Controls.Add(this.textBoxPath);
-            this.Controls.Add(this.buttonBrowse);
             this.Controls.Add(this.richTextBoxMessage);
             this.Controls.Add(this.buttonTranslate);
             this.Controls.Add(this.pictureBoxInput);
@@ -151,11 +144,10 @@
         private System.Windows.Forms.PictureBox pictureBoxInput;
         private System.Windows.Forms.Button buttonTranslate;
         private System.Windows.Forms.RichTextBox richTextBoxMessage;
-        private System.Windows.Forms.TextBox textBoxPath;
-        private System.Windows.Forms.Button buttonBrowse;
         private System.Windows.Forms.Button buttonR;
         private System.Windows.Forms.Button buttonG;
         private System.Windows.Forms.Button buttonB;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 
